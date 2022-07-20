@@ -1,0 +1,40 @@
+import java.util.Scanner;
+public class BubbleSort 
+{
+		   public static void main(String[] args) 
+		   {
+		      double [] values = new double [10]; 
+		     
+		      BubbleSort(values);
+		      PrintArray(values);
+		   }
+		   public static void BubbleSort(double values[])
+		    {
+		    Scanner input = new Scanner(System.in);
+		    for( int index = 0; index < 10; index++ )
+		        {   
+		        System.out.println("Enter a value. ");
+		             values[index] = input.nextDouble();
+		        }
+		        boolean swapped = true;
+		            for (int passes = 0; swapped == true && passes < values.length-1;passes++)
+		        {
+		            swapped = false;
+		            for(int index = 0;index < values.length - passes-1;index++)
+		            {
+		                if(values[index] > values[index+1])
+		                {
+		                    double temp = values[index];
+		                    values[index] = values[index+1];
+		                    values[index+1] = temp;
+		                    swapped = true;
+		                }
+		            }   
+		        }
+		    }    
+		    public static void PrintArray(double values[])  
+		    {     
+		        System.out.println("The lowest value is "+ values[0]+ 
+		                " and the highest value is " +values[9]);
+		    }
+}
